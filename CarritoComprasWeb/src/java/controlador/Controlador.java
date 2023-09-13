@@ -103,9 +103,10 @@ public class Controlador extends HttpServlet {
                 int idproducto = Integer.parseInt(request.getParameter("idp"));
                 for (int i = 0; i < listaCarrito.size(); i++) {
                     if (listaCarrito.get(i).getIdproducto() == idproducto) {
-                        listaCarrito.remove(i);
+                        listaCarrito.remove(i);                   
                     }
                 }
+                request.getRequestDispatcher("carrito.jsp").forward(request, response);
                 break;
             case"ActualizarCantidad":
                 int idpro=Integer.parseInt(request.getParameter("idp"));
